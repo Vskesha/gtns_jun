@@ -7,4 +7,3 @@ exchange_rate = dollar_price / euro_price
 euros = round(dollars * exchange_rate, 2)
 
 print(dollars, "доларів =", euros, "євро")
-print("-" * 50)
