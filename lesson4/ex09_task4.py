@@ -1,4 +1,4 @@
 text = "Hello, world!"
 
-reverted = text[5:1:-1]
+reverted = text[4:0:-1]
 print(reverted)
