@@ -25,17 +25,14 @@ def write_instructions():
 def move_up():
     y = t.ycor()  # Get current y-coordinate
     t.sety(y + step)  # Update y-coordinate
-    t.setheading(90)
 
 def move_down():
     y = t.ycor()
     t.sety(y - step)
-    t.setheading(270)
 
 def move_right():
     x = t.xcor()
     t.setx(x + step)
-    t.setheading(0)
 
 # Function to display "Game Over" message
 def display_game_over():
@@ -52,8 +49,8 @@ def display_you_win():
 
 # Function to disable key controls
 def disable_controls():
-    screen.onkey(None, "Up")
-    screen.onkey(None, "Down")
+    screen.onkeyrelease(None, "Up")
+    screen.onkeyrelease(None, "Down")
 
 # Function to check collision
 def check_collision():
