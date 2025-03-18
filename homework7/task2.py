@@ -4,10 +4,11 @@ import turtle
 t = turtle.Turtle()
 t.speed(10)
 t.hideturtle()
+t.penup()
 colors = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown"]
 
 for _ in range(25):
-    t.color("white", random.choice(colors))
+    t.color(random.choice(colors))
     t.begin_fill()
     for _ in range(4):
         t.forward(100)
