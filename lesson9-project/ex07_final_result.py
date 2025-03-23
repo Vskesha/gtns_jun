@@ -1,3 +1,4 @@
+import random
 import turtle
 
 # Настройки програми
@@ -32,6 +33,8 @@ def start_game(x, y):
 
     turtles = get_turtles(num_players)
     
+    start_race(turtles)
+
 # Функція для малювання кнопки "Почати гру"
 def draw_start_button():
     w = 200
@@ -106,6 +109,26 @@ def get_turtles(num_players):
         turtles.append(bot)
 
     return turtles
+
+def start_race(turtles: list):
+    game_in_progres = True
+    while game_in_progres:
+        for bot in turtles:
+            distance = random.randint(1, 10)
+            bot.forward(distance)
+            if bot.ycor() >= finish:
+                game_in_progres = False
+                winner_color = bot.color()[0]
+                bot.goto(0, 0)
+                bot.shapesize(3)
+                bot.write(
+                    f"Переможець: {winner_color}", 
+                    font=("Arial", 25, "bold"), 
+                    align="center"
+                )
+                bot.goto(0, -60)
+                break
+
 
 # Відслідковування натискання на кнопку
 draw_start_button()
